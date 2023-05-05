@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>To Do List App</title>
+</head>
+<body>
+    <!-- main div start -->
+    <div class="main" id="mainDiv">
+        <div class="heading">
+            <h1>To Do App</h1>
+            
+        </div>
+        <!-- section 1 start -->
+        <div class="sec1">
+        <!-- header div start -->
+        <div class="listCont" id="headDiv">
+            <input type="text" name="text" id="txtInput" placeholder="Add To List...">
+            <button class="btn" id="addBtn" onclick="add()">ADD</button>
+        </div>
+        <!-- header div end -->
+
+        <!-- list div start -->
+        <div class="list" id="listDiv">
+            <ul id = "list"></ul>
+            <button class="clear-all" onclick="clearAll()">Clear All</button>
+        </div>
+        <!-- list div end -->
+        </div>
+        <!-- section 1 end -->
+    </div>
+    <!-- main div end -->
+</body>
+<script src="script.js"></script>
+</html>

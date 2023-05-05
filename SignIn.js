@@ -18,30 +18,45 @@ const login = () => {
 
     if (username.value === '' || password.value === '') {
         if (username.value === '') {
-            alert('Please Enter Your Username');
+            document.getElementById('usernameError').innerText = "Please Enter Your Username!"
+            document.getElementById('userOrPassError').innerText = ""
         }
         if (password.value === '') {
-            alert('Please Enter Your Password');
+            document.getElementById('passwordError').innerText = "Please Enter Your Password!"
+            document.getElementById('userOrPassError').innerText = ""
+
         }
     } else if (username.value !== existingUsername || password.value !== existingPassword) {
         if (username.value !== existingUsername && password.value !== existingPassword) {
-            alert('Username or Password Incorrect!');
+            document.getElementById('userOrPassError').innerText = "Username OR Password Incorrect!"
+            document.getElementById('passwordError').innerText = ""
+            document.getElementById('usernameError').innerText = ""
         } else if (username.value !== existingUsername) {
-            alert('Username Incorrect');
+            document.getElementById('usernameError').innerText = "Username Incorrect!"
+            document.getElementById('userOrPassError').innerText = ""
         } else if (password.value !== existingPassword) {
-            alert('Password Incorrect');
+            document.getElementById('passwordError').innerText = "Password Incorrect!"
+            document.getElementById('userOrPassError').innerText = ""
         }
     } else if (username.value === existingUsername && password.value === existingPassword) {
-        let currentUser = {
+        let currentUser = [];
+        let data = {
             name : existingName,
             username: existingUsername,
             password: existingPassword
         }
 
+        currentUser.push(data)
+
+
         localStorage.setItem('currentUser', JSON.stringify(currentUser))
 
-        location = 'index.html';
+        location = 'Todo.html';
     }
 
 
+}
+
+const signUp = () =>{
+    location = "Index.html"
 }

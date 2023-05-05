@@ -23,23 +23,23 @@ const submit = () => {
 
     if (name.value === '' || username.value === '' || password.value === '' || confirmPassword.value === '') {
         if (name.value === '') {
-            alert('Please Enter Your Name');
+            document.getElementById('nameError').innerText = 'Please Enter Your Name!'
         }
         if (username.value === '') {
-            alert('Please Enter Your Username');
+            document.getElementById('usernameError').innerText = 'Please Enter Your Username!'
         }
         if (password.value === '') {
-            alert('Please Enter Your Password');
+            document.getElementById('passwordError').innerText = 'Please Enter Your Password!'
         }
         if (confirmPassword.value === '') {
-            alert('Please Confirm Your password');
+            document.getElementById('confirmPasswordError').innerText = 'Please Confirm Your Password!'
         }
     } 
     else if(existingUsername === username.value){
-        alert('Username Taken!')
+        document.getElementById('usernameError').innerText = 'Username Taken!'
     }
     else if(password.value !== confirmPassword.value) {
-        alert("Password Doesn't Match!");
+        document.getElementById('confirmPasswordError').innerText = "Password Doesn't Match!"
     }
     else {
 
@@ -53,13 +53,17 @@ const submit = () => {
 
         localStorage.setItem('data', JSON.stringify(data));
 
-        alert('Registered!');
-        
         username.value = '';
         name.value = '';
         password.value = '';
         confirmPassword.value = ''
 
-        location = 'signin.html';
+        alert('Registered!'); 
+    
+        location = 'Signin.html';
     }
+}
+
+const signIn = () =>{
+    location = "Signin.html"
 }

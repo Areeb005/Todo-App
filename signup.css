@@ -5,3 +5,41 @@
 }
 
 
+.form{
+    background-color: #2362CC;
+    width: 50%;
+    border-radius: 20px;
+    /* text-align: center; */
+}
+
+.title{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form .submit-btn{
+    background-color: #1A18A3 !important;
+    color: white !important;
+}
+
+.form .submit-btn:hover{
+    background-color: white !important;
+    color: black !important;
+}
+.btn-div{
+    text-align: center;
+    justify-content: center;
+}
+
+.btn-div span{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form .fields .inputError{
+    font-size: 16px;
+    color: #820200;
+    font-weight: bold;
+}

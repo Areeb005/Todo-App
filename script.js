@@ -1,25 +1,59 @@
 let existingItems = []; // An array in which all the items we get from localstorage to be set in it.
 
 
-/*        Function to 'get' items from local storage        */
+/*        Function to 'get' User from local storage        */
 const getUser = () => {
     return JSON.parse(localStorage.getItem('currentUser'))
 }
 
 
+const checkUser = () => {
+    let userData = getUser();
+    let currentUser;
+    if (userData) {
+        userData.forEach(element => {
+            currentUser = element;
+        });
+    }
+    if (!userData || !currentUser) {
+        location = "Signin.html";
+    }
+}
+
+checkUser();
+
+
+
+
+/*        Function to 'get' Items from local storage        */
 const getItems = () => {
-    let currentUser = getUser();
+    let userData = getUser();
+    let currentUser;
+    userData.forEach(element => {
+        currentUser = element;
+    });
+
     return JSON.parse(localStorage.getItem(currentUser.username));
 }
 
 /*        Function to 'set' items in local storage        */
 
 const setItem = () => {
-    let currentUser = getUser();
+    let userData = getUser();
+    let currentUser;
+    userData.forEach(element => {
+        currentUser = element;
+    });
     return localStorage.setItem(currentUser.username, JSON.stringify(existingItems));
 }
 
-let counter = 0; // counter to set different ids and parameters passed.
+let items = getItems();
+if (items === null) {
+    items = []
+}
+let counter = items.length; // counter to set different ids and parameters passed.
+
+
 
 /*        Function to get items from local storage and show them on page        */
 
@@ -185,9 +219,8 @@ function deleteLi(value) {
             array.splice(index, 1); //then splicing the object (key and value) from localstorage ----- it's like deleting it
         }
     });
-    let currentUser = getUser();
-    localStorage.setItem(currentUser.username, JSON.stringify(existingItems)); //setting the new values in localstorage array
 
+    setItem();
 
 
 }
@@ -221,8 +254,7 @@ function editLi(value) {
                 element.value = editItemInput.value; //editing the localstorage item value to new edit input value 
             }
         });
-        let currentUser = getUser();
-        localStorage.setItem(currentUser.username, JSON.stringify(existingItems)); //setting new item in localstorage
+        setItem();
         editItemInput.style.display = "none"; //displaying edit input none
         item.style.display = "block"; //displaying edited item block
     })
