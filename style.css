@@ -1,30 +1,30 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-body{
+body {
     background-color: #2362CC;
 }
 
 /* for main div */
 
-.main{
-    
-    height:fit-content;
-    width: 100%;    
+.main {
+
+    height: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    
+
 }
 
 /* for head div */
 
-.sec1{
+.sec1 {
     background-color: #FFFFFF;
 }
 
@@ -33,20 +33,18 @@ body{
     margin-bottom: 40px;
 }
 
-.heading{
+.heading {
     background-color: #FFFFFF;
     width: 500px;
     border-radius: 10px;
     margin-bottom: 50px;
-}
-.heading h1{
-    
     text-align: center;
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.listCont input{
+
+.listCont input {
     padding: 10px 10px 10px 10px;
     border-radius: 5px 5px 5px 5px;
     border: solid 2px #2362CC;
@@ -56,7 +54,7 @@ body{
     width: 320px;
 }
 
-.listCont input:focus{
+.listCont input:focus {
     transition: .3s;
     color: black;
     border: solid 2px #2362CC;
@@ -65,7 +63,8 @@ body{
     box-shadow: 0 0 0 2px rgba(170, 200, 200, 20.5);
 }
 
-.listCont .btn, .clear-all{
+.listCont .btn,
+.clear-all {
 
     padding: 12px 20px 12px 20px;
     background-color: #2362CC;
@@ -76,22 +75,24 @@ body{
     letter-spacing: 1px;
     border-radius: 5px 5px 5px 5px;
     cursor: pointer;
-    transition: .2s ;
+    transition: .2s;
 }
 
-.listCont .btn:hover, .clear-all:hover {
-    transition: .2s ;
+.listCont .btn:hover,
+.clear-all:hover {
+    transition: .2s;
     color: #FFFFFF;
     background-color: #1A18A3;
     transform: scale(1.07);
 }
 
-.clear-all{
+.clear-all {
     margin-top: 20px;
     margin-left: 35%;
+    display: none;
 }
 
-.list ul li{
+.list ul li {
     position: relative;
     padding: 15px 10px 15px 10px;
     margin-bottom: 10px;
@@ -111,7 +112,7 @@ body{
 }
 
 
-.list ul li i{
+.list ul li i {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -120,17 +121,17 @@ body{
     padding: 10px;
     color: white;
     border-radius: 5px;
-    }
+}
 
-.list ul li:hover{
+.list ul li:hover {
     transition: .3s;
     /* background-color: rgb(51, 50, 50); */
 }
 
-.list ul .checked p{
-        
+.list ul .checked p {
+
     /* background-color: whitesmoke; */
-    color:  #1A18A3;
+    color: #1A18A3;
     text-decoration: line-through;
 }
 
@@ -146,7 +147,7 @@ body{
     width: 7px;
 } */
 
-.delete{
+.delete {
     padding: 11.5px 20px;
     background-color: #1A18A3;
     border-radius: 10px;
@@ -158,20 +159,21 @@ body{
     top: 5px;
     z-index: 1;
 }
-.delete:hover{
+
+.delete:hover {
     transform: scale(1.05);
     transition: .3s;
 }
 
-.sec1{
+.sec1 {
     padding: 20px;
     border: none;
     border-radius: 20px;
     width: 450px;
-    
+
 }
 
-.edit{
+.edit {
     background-color: #2362CC;
     padding: 11.5px 20px;
     border-radius: 10px;
@@ -184,13 +186,13 @@ body{
     z-index: 1;
 }
 
-.edit:hover{
+.edit:hover {
     transform: scale(1.05);
     transition: .3s;
 }
 
 
-.editInput{
+.editInput {
     background-color: transparent;
     outline: none;
     border: none;
@@ -199,7 +201,52 @@ body{
     letter-spacing: 1px;
 }
 
-.para{
+.para {
     overflow-wrap: break-word;
     width: 250px;
 }
+
+
+
+@media (max-width: 520px) {
+
+    .heading {
+        width: 400px;
+    }
+
+    .sec1 {
+        width: 400px;
+    
+    }    
+
+    .listCont input {
+        width: 270px;
+    }
+
+    .list ul li {
+        width: 350px;
+    }
+
+}
+
+@media (max-width: 415px) {
+
+    .heading {
+        width: 300px;
+    }
+
+    .sec1 {
+        width: 300px;
+    
+    }    
+
+    .listCont input {
+        width: 170px;
+    }
+
+    .list ul li {
+        width: 260px;
+    }
+
+}
+
